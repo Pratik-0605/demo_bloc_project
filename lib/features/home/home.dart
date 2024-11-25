@@ -1,4 +1,6 @@
+import 'package:bloc_project_akshit/features/cart/ui/cart.dart';
 import 'package:bloc_project_akshit/features/home/bloc/home_bloc.dart';
+import 'package:bloc_project_akshit/features/wishlist/ui/wishlist.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -15,13 +17,20 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return BlocConsumer<HomeBloc, HomeState>(
       bloc: homeBloc,                          // It is a parameter which is going to take homebloc
-      // listenWhen: (previous, current) {},
-      // buildWhen: (previous, current) {},
-      listener: (context, state) {},
+      listenWhen: (previous, current) => current is HomeActionState,
+      buildWhen: (previous, current) => current is !HomeActionState,
+      listener: (context, state) {
+        if(state is HomeNavigatetoCartPageActionState){
+          Navigator.push(context, MaterialPageRoute(builder: (context)=> Cart()));
+        }
+        else if(state is HomeNavigatetoCartPageActionState){
+          Navigator.push(context, MaterialPageRoute(builder: (context)=> Wishlist()));
+        }
+      },
       builder: (context, state) {
         return Scaffold(
           appBar: AppBar(
-            title: Text(
+            title: const Text(
               'Pratik Grocery App',
               style: TextStyle(
                 color: Colors.white,
