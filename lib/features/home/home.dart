@@ -31,7 +31,9 @@ class _HomeState extends State<Home> {
               IconButton(onPressed: () {
                 homeBloc.add(HomeWishlistButtonNavigateEvent());
               }, icon: Icon(Icons.favorite)),
-              IconButton(onPressed: () {}, icon: Icon(Icons.shopping_bag_outlined)),
+              IconButton(onPressed: () {
+                homeBloc.add(HomeCartButtonNavigateEvent());
+              }, icon: Icon(Icons.shopping_bag_outlined)),
             ],
             backgroundColor: Colors.indigo[400],
           ),
