@@ -12,7 +12,12 @@ class HomeInitial extends HomeState {}
 class HomeLoadingState extends HomeState {}
 
 //when ui has been loaded data has been fetched and loading indicator should be removed.
-class HomeLoadedSuccessState extends HomeState {}
+class HomeLoadedSuccessState extends HomeState {
+  final List<ProductDataModel> products;
+  HomeLoadedSuccessState({
+    required this.products,
+  });
+}
 
 // suppose some error occurs so we have created a error class
 class HomeErrorState extends HomeState {}
