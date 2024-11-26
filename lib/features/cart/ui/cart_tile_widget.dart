@@ -1,11 +1,11 @@
-import 'package:bloc_project_akshit/features/home/bloc/home_bloc.dart';
+import 'package:bloc_project_akshit/features/cart/bloc/cart_bloc.dart';
 import 'package:bloc_project_akshit/features/home/models/home_product_data_model.dart';
 import 'package:flutter/material.dart';
 
-class ProductTileWidget extends StatelessWidget {
+class CartTileWidget extends StatelessWidget {
   final ProductDataModel productDataModel;              //constructor
-  final HomeBloc homeBloc;                              //constructor
-  const ProductTileWidget({super.key, required this.productDataModel, required this.homeBloc});
+  final CartBloc cartBloc;                              //constructor
+  const CartTileWidget({super.key, required this.productDataModel, required this.cartBloc});
 
   @override
   Widget build(BuildContext context) {
@@ -49,18 +49,18 @@ class ProductTileWidget extends StatelessWidget {
                 children: [
                   IconButton(
                       onPressed: () {
-                        homeBloc.add(HomeProductWishlistButtonClickedEvent(
-                          clickedProduct: productDataModel
-                        ));
+                        // homeBloc.add(HomeProductWishlistButtonClickedEvent(
+                        //   clickedProduct: productDataModel
+                        // ));
                       },
                       icon: const Icon(Icons.favorite_outline)),
                   IconButton(
                       onPressed: () {
-                        homeBloc.add(HomeProductCartButtonClickedEvent(
-                          clickedProduct: productDataModel
-                        ));
+                        // homeBloc.add(HomeProductCartButtonClickedEvent(
+                        //   clickedProduct: productDataModel
+                        // ));
                       },
-                      icon: const Icon(Icons.shopping_bag_outlined)),
+                      icon: const Icon(Icons.shopping_bag)),
                 ],
               )
             ],

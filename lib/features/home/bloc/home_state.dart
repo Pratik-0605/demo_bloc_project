@@ -27,3 +27,9 @@ class HomeNavigatetoWishlistPageActionState extends HomeActionState {}
 
 // Navigate to cart page after clicking on cart button
 class HomeNavigatetoCartPageActionState extends HomeActionState {}
+
+// Added the products to the wishlist
+class HomeProductItemWishlistedActionState extends HomeActionState {}
+
+// Added the products to the cart
+class HomeProductItemCartedActionState extends HomeActionState {}
