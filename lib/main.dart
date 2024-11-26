@@ -1,4 +1,4 @@
-import 'package:bloc_project_akshit/features/home/home.dart';
+import 'package:bloc_project_akshit/features/home/ui/home.dart';
 import 'package:flutter/material.dart';
 
 void main() {
